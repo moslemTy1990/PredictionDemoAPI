@@ -1,0 +1,349 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\20215138\\Downloads\\PredictionDemoAPI1\\PredictionDemoAPI2\\Dataset\\DataSet.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Gender",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "SicknessType",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Age",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Prediction",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.97322116772116762,
+        "RuntimeInSeconds": 5.615,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age"
+            ],
+            "InputColumnNames": [
+              "Age"
+            ]
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType",
+              "Age"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Prediction",
+            "InputColumnName": "Prediction",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 18,
+            "MinimumExampleCountPerLeaf": 14,
+            "NumberOfTrees": 7,
+            "MaximumBinCountPerFeature": 654,
+            "FeatureFraction": 0.89053224664515551,
+            "LearningRate": 0.67408898129304,
+            "LabelColumnName": "Prediction",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.91390986448080258,
+        "RuntimeInSeconds": 3.832,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e5 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age"
+            ],
+            "InputColumnNames": [
+              "Age"
+            ]
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType",
+              "Age"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Prediction",
+            "InputColumnName": "Prediction",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.994208932,
+            "LabelColumnName": "Prediction",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.91390986448080258,
+        "RuntimeInSeconds": 5.142,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e5 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age"
+            ],
+            "InputColumnNames": [
+              "Age"
+            ]
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType",
+              "Age"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Prediction",
+            "InputColumnName": "Prediction",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.994328558,
+            "LabelColumnName": "Prediction",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.91390986448080258,
+        "RuntimeInSeconds": 4.6,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e5 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age"
+            ],
+            "InputColumnNames": [
+              "Age"
+            ]
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType",
+              "Age"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Prediction",
+            "InputColumnName": "Prediction",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.9940893,
+            "LabelColumnName": "Prediction",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.91390986448080258,
+        "RuntimeInSeconds": 5.133,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e5 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age"
+            ],
+            "InputColumnNames": [
+              "Age"
+            ]
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "SicknessType",
+              "Age"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Prediction",
+            "InputColumnName": "Prediction",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.993468046,
+            "LabelColumnName": "Prediction",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "Concatenate",
+      "e3": "MapValueToKey",
+      "e4": "FastTreeOva",
+      "e5": "FastForestOva",
+      "e6": "LbfgsLogisticRegressionOva",
+      "e7": "LbfgsMaximumEntropyMulti",
+      "e8": "SdcaMaximumEntropyMulti",
+      "e9": "SdcaLogisticRegressionOva",
+      "e10": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * (e4 + e5 + e6 + e7 + e8 + e9) * e10",
+    "MetricName": "MacroAccuracy",
+    "ModelFilePath": "C:\\Users\\20215138\\Downloads\\PredictionDemoAPI1\\PredictionDemoAPI2\\MLModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 400,
+    "LabelColumn": "Prediction",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}

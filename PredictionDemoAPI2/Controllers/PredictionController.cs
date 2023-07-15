@@ -3,6 +3,9 @@ using PredictionDemoAPI2.Models;
 
 namespace PredictionDemoAPI2.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for predicting the status of the patient with ML model and has only one POST predict method which receives the patient model from body
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class PredictionController : ControllerBase
@@ -14,6 +17,11 @@ namespace PredictionDemoAPI2.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Post method for predicting the status of the patient
+        /// </summary>
+        /// <param name="patient"></param>
+        /// <returns>status</returns>
         [HttpPost(Name = "api/predictstatus")]
         public async Task<IActionResult> Predict([FromBody] Patient patient)
         {

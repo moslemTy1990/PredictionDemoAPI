@@ -2,8 +2,16 @@
 
 namespace PredictionDemoAPI1.Logic;
 
+/// <summary>
+/// State class for female gender who suffers from mental sickness
+/// </summary>
 public class FemaleMentalPredictionState: IPredictionState
 {
+    /// <summary>
+    /// given the age, checks the label category
+    /// </summary>
+    /// <param name="age"></param>
+    /// <returns>label string</returns>
     public string PredictLabel(int age)
     {
         if (age < 25)

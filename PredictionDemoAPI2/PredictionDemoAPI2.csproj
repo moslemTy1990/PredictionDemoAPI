@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>5d08f44d-8568-489b-bbde-b4d2fd6d2145</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>

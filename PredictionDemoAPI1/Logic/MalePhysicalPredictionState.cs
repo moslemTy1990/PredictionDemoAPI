@@ -1,8 +1,17 @@
 ﻿using PredictionDemoAPI1.Interfaces;
 
 namespace PredictionDemoAPI1.Logic;
+
+/// <summary>
+/// State class for male gender who suffers from Physical sickness
+/// </summary>
 public class MalePhysicalPredictionState: IPredictionState
 {
+    /// <summary>
+    /// given the age, checks the label category
+    /// </summary>
+    /// <param name="age"></param>
+    /// <returns>label string</returns>
     public string PredictLabel(int age)
     {
         if (age < 25)

@@ -2,6 +2,9 @@
 
 namespace PredictionDemoAPI2.Models;
 
+/// <summary>
+/// Patient model class with .NET Core validation to check the inputs and validates it
+/// </summary>
 public class Patient
 {
     [Required(ErrorMessage = "Age must be provided")]

@@ -16,37 +16,27 @@ public static class PredictionStateFactory
     /// <returns>IPredictionState, or null</returns>
     public static IPredictionState GetPredictionState(Patient patient)
     {
-        if (patient.SicknessType.Equals("mental", StringComparison.OrdinalIgnoreCase))
+        if (patient.SicknessType.Equals("mental"))
         {
-            if (patient.Gender.Equals("male", StringComparison.OrdinalIgnoreCase))
+            return patient.Gender switch
             {
-                return new MaleMentalPredictionState();
-            }
-            else if (patient.Gender.Equals("female", StringComparison.OrdinalIgnoreCase))
-            {
-                return new FemaleMentalPredictionState();
-            }
-            else if (patient.Gender.Equals("unknown", StringComparison.OrdinalIgnoreCase))
-            {
-                return new UnknownMentalPredictionState();
-            }
+                "male" => new MaleMentalPredictionState(),
+                "female" => new FemaleMentalPredictionState(),
+                _ => new UnknownMentalPredictionState()
+            };
+
         }
-        else if (patient.SicknessType.Equals("physical", StringComparison.OrdinalIgnoreCase))
+
+        if (patient.SicknessType.Equals("physical"))
         {
-            if (patient.Gender.Equals("male", StringComparison.OrdinalIgnoreCase))
+            return patient.Gender switch
             {
-                return new MalePhysicalPredictionState();
-            }
-            else if (patient.Gender.Equals("female", StringComparison.OrdinalIgnoreCase))
-            {
-               return new FemalePhysicalPredictionState();
-            }
-            else if (patient.Gender.Equals("unknown", StringComparison.OrdinalIgnoreCase))
-            {
-                return new  UnknownPhysicalPredictionState();
-            }
+                "male" => new MalePhysicalPredictionState(),
+                "female" => new FemalePhysicalPredictionState(),
+                _ => new UnknownPhysicalPredictionState()
+            };
         }
+
         return null;
     }
-    
 }
